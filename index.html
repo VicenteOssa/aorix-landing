@@ -3,82 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aorix | Seguimiento Inteligente de Portafolio</title>
+    <title>Aorix | Análisis Inteligente de Inversiones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            /* El "Azul Aorix" profesional */
+            --primary-blue: #0061ff;
+            --secondary-blue: #3a7bd5;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --bg-light: #ffffff;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navegación */
+        nav {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            letter-spacing: -1px;
+        }
+
+        /* Hero Section */
+        header {
+            padding: 80px 0 60px;
             text-align: center;
         }
-        .container {
-            max-width: 800px;
-            margin: 100px auto;
-            padding: 20px;
-        }
+
         h1 {
-            color: #2c3e50;
-            font-size: 3.5em;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            color: var(--text-dark);
+            line-height: 1.1;
         }
-        p.subtitle {
-            font-size: 1.3em;
-            color: #666;
-            margin-bottom: 40px;
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 650px;
+            margin: 0 auto 40px;
         }
-        .features {
-            font-size: 1.1em;
-            color: #444;
-            margin-bottom: 50px;
-            text-align: left;
-            display: inline-block;
-            background: #fff;
-            padding: 30px 40px;
+
+        .btn-main {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 16px 32px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            list-style-type: none;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+            box-shadow: 0 4px 14px 0 rgba(0, 97, 255, 0.3);
         }
-        .features li {
-            margin-bottom: 15px;
+
+        .btn-main:hover {
+            transform: translateY(-2px);
+            background-color: #0052d9;
+            box-shadow: 0 6px 20px rgba(0, 97, 255, 0.4);
         }
-        .features li:last-child {
-            margin-bottom: 0;
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
         }
-        .legal-links {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #ddd;
+
+        .feature-card {
+            background: white;
+            border: 1px solid #f1f5f9;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            transition: border 0.3s ease;
         }
+
+        .feature-card:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .icon {
+            background: rgba(0, 97, 255, 0.1);
+            color: var(--primary-blue);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        /* Contacto */
+        .contact-section {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 60px 40px;
+            margin: 100px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .email-link {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 2px solid rgba(0, 97, 255, 0.1);
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .email-link:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            border-top: 1px solid #f1f5f9;
+            text-align: center;
+        }
+
         .legal-links a {
-            color: #007bff;
+            color: var(--text-gray);
             text-decoration: none;
             margin: 0 15px;
-            font-size: 0.95em;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
+
         .legal-links a:hover {
-            text-decoration: underline;
+            color: var(--primary-blue);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            header { padding: 40px 0; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Aorix</h1>
-        <p class="subtitle">Tu app de seguimiento de portafolio potenciada por Inteligencia Artificial.</p>
+        <nav>
+            <div class="logo">AORIX</div>
+            <div class="legal-links">
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
 
-        <ul class="features">
-            <li>📊 <strong>Seguimiento exacto:</strong> Visualiza todos tus movimientos y tu portafolio en un solo lugar.</li>
-            <li>🎯 <strong>Análisis Inteligente (IA):</strong> La Inteligencia Artificial de Aorix analiza diariamente tu progreso constante con respecto a tus metas personales.</li>
-            <li>📰 <strong>Contexto real:</strong> Análisis aterrizado y actualizado en tiempo real con las últimas noticias del mercado.</li>
-        </ul>
+        <header>
+            <h1>Optimiza tu patrimonio con IA</h1>
+            <p class="subtitle">La plataforma inteligente para inversores que buscan precisión, claridad y crecimiento constante en su portafolio.</p>
+            <a href="suscripciones.html" class="btn-main">Ver planes de suscripción</a>
+        </header>
 
-        <div class="legal-links">
-            <a href="terms.html">Términos y Condiciones</a>
-            <a href="privacy.html">Política de Privacidad</a>
-            <a href="suscripciones.html">Suscripciones Pro</a>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Seguimiento Exacto</h3>
+                <p>Mantén un control total de tus activos en una sola interfaz limpia y profesional. Visualiza tu rendimiento histórico sin complicaciones.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🎯</div>
+                <h3>Análisis con IA Pro</h3>
+                <p>Nuestra inteligencia artificial avanzada procesa tus datos para ofrecerte proyecciones y ajustes personalizados según tus objetivos financieros.</p>
+            </div>
         </div>
+
+        <section class="contact-section" id="contacto">
+            <h2>¿Hablamos?</h2>
+            <p class="subtitle">Si tienes dudas sobre nuestras suscripciones o necesitas soporte, escríbenos directamente.</p>
+            <a href="mailto:aorix.tech@gmail.com" class="email-link">aorix.tech@gmail.com</a>
+        </section>
+
+        <footer>
+            <div class="legal-links">
+                <a href="terms.html">Términos</a>
+                <a href="privacy.html">Privacidad</a>
+                <a href="suscripciones.html">Planes Pro</a>
+            </div>
+            <p class="copyright">&copy; 2026 Aorix Tech. Todos los derechos reservados.</p>
+        </footer>
     </div>
 
 </body>
